@@ -2,7 +2,7 @@ import board
 import neopixel
 import colorsys
 from time import sleep
-from matts_leds import repeating_sequence
+from matts_leds import repeating_sequence_all_pixels
 
 PIXEL_COUNT = 100
 ORDER = neopixel.RGB
@@ -16,4 +16,4 @@ for (r,g,b) in colors:
     rgb_values += [(int(r*x/steps), int(g*x/steps), int(b*x/steps)) for x in range(steps-1, -1, -1)]
     rgb_values += [(0,0,0) for x in range(int(steps/2))]
 
-repeating_sequence(pixels, PIXEL_COUNT, rgb_values, .01)
+repeating_sequence_all_pixels(pixels, rgb_values, .01)
